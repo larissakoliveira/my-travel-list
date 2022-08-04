@@ -2,8 +2,10 @@
   <div class="container">
     <header class="header">
       <h1 class='title'> {{ props.title }}</h1>
-    <router-link class="my-list" to="/my-list">My List</router-link>
+          <!-- <router-link class="my-list" to="/my-list">My List</router-link> -->
+
   </header>
+  <!-- <router-view/> -->
     <!-- <SearchCountry/> -->
     <CardCountry/>
     </div>
@@ -38,10 +40,4 @@ const props = defineProps({
   color: rgb(205, 46, 46);
 }
 
-.my-list {
-  color: aliceblue;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
 </style>

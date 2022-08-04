@@ -1,7 +1,26 @@
 <template>
-    <HomePage title='TRAVEL LIST'/>
+
+  <router-link class="my-list" to="/my-list">My List</router-link>
+  <!-- <router-link class="my-list" to="/">Home</router-link> -->
+    <HomePage title='TRAVELIST'/>
+
+          <router-view/>
 </template>
 
 <script setup>
-import HomePage from './pages/HomePage.vue'
+import HomePage from './views/HomePage.vue'
 </script>
+
+<style>
+.my-list {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.container {
+
+}
+
+</style>

@@ -9,8 +9,7 @@ const apolloClient = new ApolloClient({
   uri: 'https://countries.trevorblades.com/'
 })
 
-const main = createApp(App)
-
-main.use(router)
-main.provide(DefaultApolloClient, apolloClient)
-main.mount('#app')
+createApp(App)
+  .use(router)
+  .provide(DefaultApolloClient, apolloClient)
+  .mount('#app')

@@ -1,11 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import MyList from '@/pages/MyList.vue'
-import HomePage from '@/pages/HomePage.vue'
+import MyList from '@/views/MyList.vue'
+import HomePage from '@/views/HomePage.vue'
 
 const routes = [
-  { path: '/', component: HomePage },
-  { path: '/my-list', component: MyList }
+  {
+    path: '/',
+    name: 'HomePage',
+    component: HomePage
+  },
+  {
+    path: '/my-list',
+    name: 'MyList',
+    component: MyList
+  }
 ]
 
 const router = createRouter({

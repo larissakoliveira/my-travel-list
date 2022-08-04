@@ -123,7 +123,7 @@ export default {
 
 .add-list-btn {
   max-width: 50%;
-  margin: 0 auto;
+  margin: 10px auto;
   cursor: pointer;
 }
 
