@@ -2,6 +2,8 @@
 import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
 import { computed, ref } from 'vue'
+import { useStore } from 'vuex'
+import MyList from '@/views/MyList.vue'
 
 export default {
   setup () {
@@ -22,17 +24,11 @@ export default {
       }
   `)
     const countries = computed(() => result.value?.countries ?? [])
-
     const newSearch = ref('')
-
     let countryNotFoundError = ref(false)
-
     const filteredCountries = computed(() => {
       if (newSearch.value) {
-        const countryFound = countries.value.filter((country) =>
-          country.name.toLowerCase().includes(newSearch.value.toLowerCase())
-        )
-
+        const countryFound = countries.value.filter((country) => country.name.toLowerCase().includes(newSearch.value.toLowerCase()))
         if (countryFound.length === 0) {
           console.log(countryNotFoundError)
           countryNotFoundError = true
@@ -42,14 +38,20 @@ export default {
       }
       return countries.value
     })
-
+    // get the store
+    const store = useStore()
+    const addToMyList = (country) => {
+      store.dispatch('actionAddCountryToList', country)
+    }
     return {
       result,
       filteredCountries,
       newSearch,
-      countryNotFoundError
+      countryNotFoundError,
+      addToMyList
     }
-  }
+  },
+  components: { MyList }
 }
 </script>
 
@@ -58,6 +60,7 @@ export default {
   <label class="search search-label">Search for a country</label>
    <input type="text" v-model="newSearch" class="search search-input" placeholder="search"/>
   <h3 v-if="countryNotFoundError">Country Not Found</h3>
+  <MyList/>
 </div>
 <div class="container">
   <div  class="card-content-div" v-for="country in filteredCountries" :key="country.code">
@@ -67,7 +70,7 @@ export default {
       <p class="card-content">{{ country.currency }}</p>
       <p class="card-content">Language: {{ country.languages[0]?.name }}</p>
       <img class="card-content image" v-bind:src="`https://source.unsplash.com/1600x900/?${country.name}-nature`"/>
-      <button v-on:click="test" type="button" class="btn add-list-btn">Add to My List</button>
+      <button v-on:click="addToMyList(country)" type="button" class="btn add-list-btn">Add to My List</button>
   </div>
 </div>
 </template>

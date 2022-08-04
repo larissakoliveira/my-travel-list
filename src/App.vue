@@ -1,10 +1,10 @@
 <template>
 
-  <router-link class="my-list" to="/my-list">My List</router-link>
-  <!-- <router-link class="my-list" to="/">Home</router-link> -->
+  <!-- <router-link class="my-list" to="/my-list">My List</router-link>
+  <router-link class="my-list" to="/">Home</router-link> -->
     <HomePage title='TRAVELIST'/>
 
-          <router-view/>
+          <!-- <router-view/> -->
 </template>
 
 <script setup>
