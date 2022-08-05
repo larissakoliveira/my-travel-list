@@ -1,20 +1,22 @@
 <template>
   <div class="container">
     <header class="header">
-      <h1 class='title'> {{ props.title }}</h1>
+      <h1 class='title'>TRAVELIST</h1>
+      <h3>LogOut</h3>
   </header>
     <CardCountry/>
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+
+// import { defineProps } from 'vue'
 import CardCountry from '@/components/CardCountry.vue'
 // import SearchCountry from '../components/SearchCountry.vue'
 
-const props = defineProps({
-  title: String
-})
+// const props = defineProps({
+//   title: String
+// })
 
 </script>
 
@@ -34,6 +36,10 @@ const props = defineProps({
 
 .title {
   color: rgb(205, 46, 46);
+}
+
+h3 {
+  cursor: pointer;
 }
 
 </style>

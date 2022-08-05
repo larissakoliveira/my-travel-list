@@ -1,6 +1,6 @@
 <template>
 <h1>MY LIST HERE</h1>
-<p>Number of countries in the list: {{numberOfCountriesInTheList}}</p>
+<!-- <p>Number of countries in this list: {{numberOfCountriesInTheList}}</p> -->
 <ul class="my-countries-list" v-for="country in myList" v-bind:key="country.code">
   <li>
     {{country.name}}

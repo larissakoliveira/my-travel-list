@@ -3,7 +3,6 @@ import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
-import ListView from '@/views/ListView.vue'
 
 export default {
   setup () {
@@ -50,8 +49,7 @@ export default {
       countryNotFoundError,
       addToMyList
     }
-  },
-  components: { ListView }
+  }
 }
 </script>
 
@@ -60,7 +58,6 @@ export default {
   <label class="search search-label">Search for a country</label>
    <input type="text" v-model="newSearch" class="search search-input" placeholder="search"/>
   <h3 v-if="countryNotFoundError">Country Not Found</h3>
-  <ListView/>
 </div>
 <div class="container">
   <div  class="card-content-div" v-for="country in filteredCountries" :key="country.code">
