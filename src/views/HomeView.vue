@@ -2,11 +2,7 @@
   <div class="container">
     <header class="header">
       <h1 class='title'> {{ props.title }}</h1>
-          <!-- <router-link class="my-list" to="/my-list">My List</router-link> -->
-
   </header>
-  <!-- <router-view/> -->
-    <!-- <SearchCountry/> -->
     <CardCountry/>
     </div>
 </template>

@@ -1,10 +1,11 @@
 <template>
 <h1>MY LIST HERE</h1>
 <p>Number of countries in this list: {{numberOfCountries}}</p>
-<ul v-for="country in myList" v-bind:key="country.code">
+<ul class="my-countries-list" v-for="country in myList" v-bind:key="country.code">
   <li>
     {{country.name}}
   </li>
+  <button @click="deleteCountry(country)" class="delete-btn">X</button>
 </ul>
 </template>
 
@@ -17,15 +18,33 @@ export default {
     const store = useStore()
     const numberOfCountries = computed(() => store.getters.numberOfCountries)
     const myList = computed(() => store.state.list)
+    const deleteCountry = (country) => {
+      store.dispatch('actionRemoveCountryFromList', country)
+    }
 
     return {
       myList,
-      numberOfCountries
+      numberOfCountries,
+      deleteCountry
     }
   }
 }
 
 </script>
+
+<style>
+.my-countries-list {
+  display: flex;
+}
+.delete-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: rgb(172, 56, 56);
+  border-radius: 10px;
+  font-weight: 900;
+  color: blacks;
+}
+</style>
 
 <!--
 <script>

@@ -11,7 +11,7 @@ const apolloClient = new ApolloClient({
 })
 
 createApp(App)
-  .use(router)
   .use(store)
   .provide(DefaultApolloClient, apolloClient)
+  .use(router)
   .mount('#app')
