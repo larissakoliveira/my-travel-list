@@ -1,6 +1,6 @@
 <template>
 <h1>MY LIST HERE</h1>
-<p>Number of countries in this list: {{numberOfCountries}}</p>
+<p>Number of countries in the list: {{numberOfCountriesInTheList}}</p>
 <ul class="my-countries-list" v-for="country in myList" v-bind:key="country.code">
   <li>
     {{country.name}}
@@ -16,7 +16,7 @@ import { computed } from 'vue'
 export default {
   setup () {
     const store = useStore()
-    const numberOfCountries = computed(() => store.getters.numberOfCountries)
+    const numberOfCountriesInTheList = computed(() => store.getters.numberOfCountriesInTheList)
     const myList = computed(() => store.state.list)
     const deleteCountry = (country) => {
       store.dispatch('actionRemoveCountryFromList', country)
@@ -24,7 +24,7 @@ export default {
 
     return {
       myList,
-      numberOfCountries,
+      numberOfCountriesInTheList,
       deleteCountry
     }
   }
