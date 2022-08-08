@@ -8,7 +8,7 @@
 ### [GraphQL](https://graphql.org/)
 
 
-### Here you can see all the countries in the world and add to your list the countries that you would like to visit.
+### Here you can see all the countries in the world and add to your list the countries that you would like to visit or the ones that you've already visit.
 ### The API used was [Trevor blades](https://countries.trevorblades.com/)
 
 ![image](https://user-images.githubusercontent.com/82476805/183533245-54828488-50b2-40ed-bbce-f4cfdcbf1825.png)
