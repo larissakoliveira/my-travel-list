@@ -1,5 +1,8 @@
 # travel-vue3-project
 
+![image](https://user-images.githubusercontent.com/82476805/183423376-e0168eb1-4a93-40bf-aeba-58722c9a280d.png)
+
+
 ## Project setup
 ```
 npm install
