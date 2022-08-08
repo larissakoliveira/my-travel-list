@@ -6,12 +6,13 @@ export default {
   component: AuthView,
   children: [
     {
-      path: 'login',
+      path: '/',
       name: 'Login',
       component: () => import('../views/Auth/LoginView.vue')
+      // redirect: '/auth/login'
     },
     {
-      path: 'register',
+      path: '/register',
       name: 'Register',
       component: () => import('../views/Auth/RegisterView.vue')
     }

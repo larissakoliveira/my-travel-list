@@ -29,15 +29,12 @@ export default {
       if (newSearch.value) {
         const countryFound = countries.value.filter((country) => country.name.toLowerCase().includes(newSearch.value.toLowerCase()))
         if (countryFound.length === 0) {
-          console.log(countryNotFoundError)
           countryNotFoundError = true
-          console.log(countryNotFoundError)
         }
         return countryFound
       }
       return countries.value
     })
-    // get the store
     const store = useStore()
     const addToMyList = (country) => {
       store.dispatch('actionAddCountryToList', country)
@@ -86,12 +83,12 @@ export default {
   margin: 0.2em;
 }
 .card-content-div:hover {
-  background-color: black;
+  background-color: #000000;
   cursor: pointer;
 }
 
 .card-content-div {
-  border: 2px solid white;
+  border: 2px solid #fff;
   border-radius: 5px;
   box-sizing: border-box;
   margin: 10px;
@@ -125,6 +122,12 @@ export default {
   max-width: 50%;
   margin: 10px auto;
   cursor: pointer;
+  background-color: #CD2E2E;
+  font-weight: 900;
+}
+
+.add-list-btn:hover {
+  background-color: #a17a7a;
 }
 
 @media (max-width: 500px) {

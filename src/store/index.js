@@ -12,7 +12,7 @@ export default createStore({
       return state.list.length
     }
   },
-  // to update synchronous code
+  // to update sync code
   mutations: {
     addCountryToMyList (state, country) {
       if (!state.list.includes(country)) {
@@ -30,7 +30,10 @@ export default createStore({
 
   actions: {
     actionAddCountryToList ({ commit }, payload) {
-      setTimeout(() => { commit('addCountryToMyList', payload) }, 500)
+      setTimeout(() => {
+        commit('addCountryToMyList', payload)
+        alert('Country added successfully')
+      }, 500)
     },
     actionRemoveCountryFromList (context, payload) {
       context.commit('removeCountryFromMyList', payload)

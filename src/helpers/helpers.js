@@ -18,3 +18,5 @@ export function useMutations (arr) {
   const keypair = arr.map(mutationskey => [mutationskey, input => store.commit(mutationskey, input)])
   return Object.fromEntries(keypair)
 }
+
+// since composition api does not have mapping function like options api, created these.

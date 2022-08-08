@@ -2,7 +2,7 @@
   <div class="container">
     <header class="header">
       <h1 class='title'>TRAVELIST</h1>
-      <h3>LogOut</h3>
+      <!-- <h3>LogOut</h3>  -->
   </header>
     <CardCountry/>
     </div>
