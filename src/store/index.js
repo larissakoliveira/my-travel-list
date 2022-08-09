@@ -17,6 +17,9 @@ export default createStore({
     addCountryToMyList (state, country) {
       if (!state.list.includes(country)) {
         state.list = [...state.list, country]
+        alert(`${country.name} was successfully added to your list`)
+      } else {
+        alert(`${country.name} is already added to your list`)
       }
     },
     removeCountryFromMyList (state, country) {
@@ -32,7 +35,6 @@ export default createStore({
     actionAddCountryToList ({ commit }, payload) {
       setTimeout(() => {
         commit('addCountryToMyList', payload)
-        alert('Country added successfully')
       }, 500)
     },
     actionRemoveCountryFromList (context, payload) {

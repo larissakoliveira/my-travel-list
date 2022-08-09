@@ -69,7 +69,7 @@ export default {
 </div>
 </template>
 
-<style>
+<style scope>
 .container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -83,7 +83,7 @@ export default {
   margin: 0.2em;
 }
 .card-content-div:hover {
-  background-color: #000000;
+  background-color: #322b2b88;
   cursor: pointer;
 }
 
